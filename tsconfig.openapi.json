@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"outDir": "dist/openapi",
+		"target": "ES2019",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"noEmitOnError": false
+	},
+	"include": ["_scripts", "src/lib/server/_api/**/*.ts"]
+}
