@@ -11,3 +11,6 @@ local:
 	docker compose up -d
 	npx drizzle-kit studio
 
+.PHONY: gen-openapi
+gen-openapi:
+	npm run openapi:gen

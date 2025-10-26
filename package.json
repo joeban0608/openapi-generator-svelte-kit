@@ -19,7 +19,11 @@
 		"db:push": "drizzle-kit push",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
-		"db:studio": "drizzle-kit studio"
+		"db:studio": "drizzle-kit studio",
+		"openapi:init-schema": "mkdir -p _scripts/api && cp src/lib/server/_api/* _scripts/api/",
+		"openapi:fix-imports": "node _scripts/add-js-extension-to-imports.js",
+		"openapi:build": "npm run openapi:init-schema && npm run openapi:fix-imports && npx tsc --project tsconfig.openapi.json",
+		"openapi:gen": "npm run openapi:build && node dist/openapi/_scripts/gen-openapi-to-fs.js"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",
@@ -56,6 +60,7 @@
 		"vitest-browser-svelte": "^0.1.0"
 	},
 	"dependencies": {
+		"@asteasolutions/zod-to-openapi": "^8.1.0",
 		"@inlang/paraglide-js": "^2.4.0",
 		"@node-rs/argon2": "^2.0.2",
 		"@oslojs/crypto": "^1.0.1",
